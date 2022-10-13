@@ -6,12 +6,12 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 15:55:12 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/10/13 18:25:35 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:15:40 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
@@ -33,6 +33,5 @@ char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
-char	*clean(char *to_clean);
 
 #endif
