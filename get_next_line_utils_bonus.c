@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:35:57 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/10/13 17:42:47 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:27:43 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ char	*ft_strdup_gnl(char *s1)
 	i = 0;
 	new = malloc(sizeof(char) *(ft_strlen(s1) + 1));
 	if (!new)
+	{
+		free(s1);
 		return (NULL);
+	}
 	while (*s1 != '\0')
 	{
 		new[i] = *s1;

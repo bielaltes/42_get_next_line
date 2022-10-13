@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:29:16 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/10/13 17:41:32 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:48:42 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ char	*read_from_file(int fd, char *accumulative)
 	{
 		aux = read(fd, buffer, BUFFER_SIZE);
 		if (aux == -1)
+		{
+			free(accumulative);
 			return (clean(buffer));
+		}
 		buffer[aux] = '\0';
 		if (aux != 0)
 			accumulative = ft_strjoin(accumulative, buffer);
@@ -53,9 +56,7 @@ char	*next_acc(char *accumulative)
 		aux = ft_strdup_gnl(aux);
 		if (!aux)
 		{
-			free(accumulative);
-			accumulative = NULL;
-			return (NULL);
+			return (clean(accumulative));
 		}
 		free(accumulative);
 		return (aux);
